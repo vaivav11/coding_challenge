@@ -1,0 +1,24 @@
+<h2>Please fill your information</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-offset-3">
+      <%= simple_form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li> <%= message %> </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= f.input :name, required: true %>
+        <%= f.input :email, required: true %>
+        <%= f.input :gender, collection: [:male, :female] %>
+        <%= f.input :password, required: true %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
