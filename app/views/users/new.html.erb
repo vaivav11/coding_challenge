@@ -16,6 +16,8 @@
         <%= f.input :name, required: true %>
         <%= f.input :email, required: true %>
         <%= f.input :gender, collection: [:male, :female] %>
+        <p>Happy to receive news</p>
+        <%=f.check_box :options %>
         <%= f.input :password, required: true %>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
